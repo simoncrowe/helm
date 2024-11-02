@@ -1,6 +1,27 @@
 apiVersion: v1
 entries:
+  shortlist-rm-ingester:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2024-11-02T15:36:58.850911406Z"
+    description: Ingests listings
+    digest: 852288a0ff22e8b9a96367803e3985b742a37cda3f1b803b9899b85f6c166860
+    name: shortlist-rm-ingester
+    type: application
+    urls:
+    - https://github.com/simoncrowe/helm/releases/download/shortlist-rm-ingester-0.1.0/shortlist-rm-ingester-0.1.0.tgz
+    version: 0.1.0
   shortlist-runner:
+  - apiVersion: v2
+    appVersion: 0.1.1
+    created: "2024-11-02T15:36:58.922130837Z"
+    description: Runs k8s jobs based on ingested payloads
+    digest: 0b66dec81fd64150253633de6cd7dd47dd28d36d6ba176d0a5dd8da86272a857
+    name: shortlist-runner
+    type: application
+    urls:
+    - https://github.com/simoncrowe/helm/releases/download/shortlist-runner-0.1.1/shortlist-runner-0.1.1.tgz
+    version: 0.1.1
   - apiVersion: v2
     appVersion: 0.1.0
     created: "2024-10-10T14:13:07.139290702Z"
@@ -11,4 +32,4 @@ entries:
     urls:
     - https://github.com/simoncrowe/helm/releases/download/shortlist-runner-0.1.0/shortlist-runner-0.1.0.tgz
     version: 0.1.0
-generated: "2024-10-10T14:13:07.139302244Z"
+generated: "2024-11-02T15:36:58.922170922Z"
