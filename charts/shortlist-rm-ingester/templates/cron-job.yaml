@@ -1,0 +1,43 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  labels:
+    {{- include "shortlist-rm-ingester.labels" . | nindent 4 }}
+  name: {{ include "shortlist-rm-ingester.fullname" . }}
+  namespace: shortlist
+spec:
+  schedule: {{ .Values.cron.schedule }}  
+  jobTemplate:
+    metadata:
+      labels:
+        {{- include "shortlist-rm-ingester.labels" . | nindent 4 }}
+      name: {{ include "shortlist-rm-ingester.fullname" . }}
+      namespace: shortlist
+    spec:
+      completions: 1
+      backoffLimit: 1
+      template:
+        metadata:
+          {{- with .Values.podAnnotations }}
+          annotations:
+            {{- toYaml . | nindent 8 }}
+          {{- end }}
+          labels:
+            {{- include "shortlist-rm-ingester.labels" . | nindent 8 }}
+            {{- with .Values.podLabels }}
+            {{- toYaml . | nindent 8 }}
+            {{- end }}
+        spec:
+          containers:
+          - image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}" 
+            args: [{{ .Values.ingester.resultsUrl }}]
+            name: ingester
+            resources: {}
+            env:
+            - name: RUNNER_URL
+              value: {{ .Values.ingester.runnerUrl }}
+            - name: REDIS_HOST
+              value: {{ .Values.redis.hostname }} 
+            - name: REDIS_PASS
+              value: {{ .Values.redis.password }} 
+          restartPolicy: Never

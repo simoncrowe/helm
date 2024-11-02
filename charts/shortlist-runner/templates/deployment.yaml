@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     {{- include "shortlist-runner.labels" . | nindent 4 }}
-  namespace: {{ .Values.labels }}
+  namespace: {{ .Values.namespace }}
   name: {{ include "shortlist-runner.fullname" . }}
 spec:
   replicas: {{ .Values.replicas }}
