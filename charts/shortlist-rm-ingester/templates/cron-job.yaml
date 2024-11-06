@@ -6,11 +6,11 @@ metadata:
   name: {{ include "shortlist-rm-ingester.fullname" . }}
   namespace: shortlist
 spec:
-  schedule: {{ .Values.cron.schedule }}  
+  schedule: "{{ .Values.cron.schedule }}"
   jobTemplate:
     metadata:
       labels:
-        {{- include "shortlist-rm-ingester.labels" . | nindent 4 }}
+        {{- include "shortlist-rm-ingester.labels" . | nindent 8 }}
       name: {{ include "shortlist-rm-ingester.fullname" . }}
       namespace: shortlist
     spec:
@@ -20,12 +20,12 @@ spec:
         metadata:
           {{- with .Values.podAnnotations }}
           annotations:
-            {{- toYaml . | nindent 8 }}
+            {{- toYaml . | nindent 12 }}
           {{- end }}
           labels:
-            {{- include "shortlist-rm-ingester.labels" . | nindent 8 }}
+            {{- include "shortlist-rm-ingester.labels" . | nindent 12 }}
             {{- with .Values.podLabels }}
-            {{- toYaml . | nindent 8 }}
+            {{- toYaml . | nindent 12 }}
             {{- end }}
         spec:
           containers:
