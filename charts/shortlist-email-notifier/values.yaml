@@ -1,0 +1,51 @@
+# Default values for shortlist-rm-email-notifier.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+namespace: shortlist
+
+replicaCount: 1
+
+image:
+  repository: ghcr.io/simoncrowe/shortlist-rm-email-notifier
+  pullPolicy: IfNotPresent
+  tag: null 
+
+aws:
+  roleArn: null
+  sesIdentityArn: null
+  region: null
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+podAnnotations: {}
+podLabels: {}
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources: {}
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+livenessProbe:
+  httpGet:
+    path: /health
+    port: 8080
+readinessProbe:
+  httpGet:
+    path: /health
+    port: 8080
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
