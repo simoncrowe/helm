@@ -7,7 +7,8 @@ namespace: shortlist
 replicaCount: 1
 
 image:
-  repository: ghcr.io/simoncrowe/shortlist-rm-email-notifier
+  #repository: ghcr.io/simoncrowe/shortlist-rm-email-notifier
+  repository: amazon/aws-cli  # for testing 
   pullPolicy: IfNotPresent
   tag: null 
 
@@ -15,6 +16,9 @@ aws:
   roleArn: null
   sesIdentityArn: null
   region: null
+
+emailer:
+  destination_email: null
 
 imagePullSecrets: []
 nameOverride: ""
