@@ -36,19 +36,20 @@ spec:
         - name: AWS_SES_IDENTITY_ARN
           value: {{ .Values.aws.sesIdentityArn }}
         - name: AWS_REGION
-          value: {{ .Values.region }}
+          value: {{ .Values.aws.region }}
         - name: AWS_WEB_IDENTITY_TOKEN_FILE
           value: '/var/run/secrets/tokens/{{ include "shortlist-rm-email-notifier.fullname" . }}-token'
         - name: AWS_ROLE_ARN
           value: {{ .Values.aws.roleArn }}
         volumeMounts:
         - mountPath: /var/run/secrets/tokens
-          name: '{{ include "shortlist-rm-email-notifier.fullname" . }}-token'
+          name: serviceaccount-token-for-aws-sts 
       volumes:
-      - name: '{{ include "shortlist-rm-email-notifier.fullname" . }}-token'
+      - name: serviceaccount-token-for-aws-sts 
         projected:
           sources:
           - serviceAccountToken:
-            path: '{{ include "shortlist-rm-email-notifier.fullname" . }}-token'
-            expirationSeconds: 86400
-            audience: sts.amazonaws.com
+              path: '{{ include "shortlist-rm-email-notifier.fullname" . }}-token'
+              expirationSeconds: 86400
+              audience: sts.amazonaws.com
+
