@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   shortlist-rm-email-notifier:
   - apiVersion: v2
+    appVersion: 0.2.0
+    created: "2025-01-25T18:43:23.964056604Z"
+    description: Sends email notifications for shortlisted RM profiles
+    digest: 06bd87f239083d597da6736cc3444aba8fa146253b037187975da05e88d252b3
+    name: shortlist-rm-email-notifier
+    type: application
+    urls:
+    - https://github.com/simoncrowe/helm/releases/download/shortlist-rm-email-notifier-0.2.0/shortlist-rm-email-notifier-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     appVersion: 0.1.0
     created: "2025-01-18T13:49:21.940704477Z"
     description: Sends email notifications for shortlisted RM profiles
@@ -83,4 +93,4 @@ entries:
     urls:
     - https://github.com/simoncrowe/helm/releases/download/shortlist-runner-0.1.0/shortlist-runner-0.1.0.tgz
     version: 0.1.0
-generated: "2025-01-18T13:49:21.940722741Z"
+generated: "2025-01-25T18:43:23.964093153Z"
