@@ -42,9 +42,9 @@ spec:
         - name: AWS_SES_IDENTITY_ARN
           value: {{ .Values.aws.sesIdentityArn }}
         - name: SOURCE_EMAIL
-          value: {{ .Values.email.source_email }}
+          value: {{ .Values.email.sourceEmail }}
         - name: DESTINATION_EMAIL
-          value: {{ .Values.email.destination_email }}
+          value: {{ .Values.email.destinationEmail }}
         volumeMounts:
         - mountPath: /var/run/secrets/tokens
           name: serviceaccount-token-for-aws-sts 

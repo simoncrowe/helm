@@ -17,8 +17,8 @@ aws:
   region: null
 
 emailer:
-  source_email: null
-  destination_email: null
+  sourceEmail: null
+  destinationEmail: null
 
 imagePullSecrets: []
 nameOverride: ""
