@@ -33,14 +33,18 @@ spec:
         resources:
           {{- toYaml .Values.resources | nindent 10 }}
         env:
-        - name: AWS_SES_IDENTITY_ARN
-          value: {{ .Values.aws.sesIdentityArn }}
         - name: AWS_REGION
           value: {{ .Values.aws.region }}
         - name: AWS_WEB_IDENTITY_TOKEN_FILE
           value: '/var/run/secrets/tokens/{{ include "shortlist-rm-email-notifier.fullname" . }}-token'
         - name: AWS_ROLE_ARN
           value: {{ .Values.aws.roleArn }}
+        - name: AWS_SES_IDENTITY_ARN
+          value: {{ .Values.aws.sesIdentityArn }}
+        - name: SOURCE_EMAIL
+          value: {{ .Values.email.source_email }}
+        - name: DESTINATION_EMAIL
+          value: {{ .Values.email.destination_email }}
         volumeMounts:
         - mountPath: /var/run/secrets/tokens
           name: serviceaccount-token-for-aws-sts 
