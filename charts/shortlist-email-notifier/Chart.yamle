@@ -1,7 +1,0 @@
-apiVersion: v2
-name: shortlist-rm-email-notifier
-description: Sends email notifications for shortlisted RM profiles
-type: application
-
-version: 0.1.0
-appVersion: "0.1.0"
