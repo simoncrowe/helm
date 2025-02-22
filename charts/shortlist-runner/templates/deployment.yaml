@@ -34,6 +34,6 @@ spec:
           {{- toYaml .Values.resources | nindent 10 }}
         env:
         - name: ASSESSOR_IMAGE
-          value: {{ .Values.assessorImage }}
+          value: {{ .Values.runner.assessorImage }}
         - name: NOTIFIER_URL
-          value: {{ .Values.notifierUrl }}
+          value: {{ .Values.runner.notifierUrl }}
