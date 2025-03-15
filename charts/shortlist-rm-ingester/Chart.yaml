@@ -3,5 +3,5 @@ name: shortlist-rm-ingester
 description: Ingests listings 
 type: application
 
-version: 1.0.8
+version: 1.0.9
 appVersion: "1.0.4"
