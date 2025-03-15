@@ -41,4 +41,7 @@ spec:
             - "{{ .Values.ingester.runnerUrl }}"
             name: ingester
             resources: {}
+            env:
+            - name: BASE_LISTING_URL
+            - value: {{ .Values.ingester.baseListingUrl }}
           restartPolicy: Never
