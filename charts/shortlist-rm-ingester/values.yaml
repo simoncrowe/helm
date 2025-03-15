@@ -12,6 +12,7 @@ image:
 ingester:
   resultsUrl: null
   runnerUrl: null
+  baseListingUrl: null
 
 cron:
   schedule: "*/30 * * * *"
