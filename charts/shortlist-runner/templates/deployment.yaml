@@ -37,3 +37,7 @@ spec:
           value: {{ .Values.runner.assessorImage }}
         - name: NOTIFIER_URL
           value: {{ .Values.runner.notifierUrl }}
+        - name: LLM_SYSTEM_PROMPT
+          value: {{ .Values.runner.llmSystemPrompt }}
+        - name: LLM_POSITIVE_RESPONSE_REGEX
+          value: {{ .Values.runner.llmPositiveResponseRegex }}
