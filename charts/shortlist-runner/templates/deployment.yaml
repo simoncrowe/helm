@@ -42,6 +42,6 @@ spec:
         - name: ASSESSOR_IMAGE
           value: {{ .Values.assessor.image }}
         - name: LLM_SYSTEM_PROMPT
-          value: {{ .Values.assessor.llmSystemPrompt }}
+          value: {{ .Values.assessor.llmSystemPrompt | quote }}
         - name: LLM_POSITIVE_RESPONSE_REGEX
-          value: {{ .Values.assessor.llmPositiveResponseRegex }}
+          value: {{ .Values.assessor.llmPositiveResponseRegex | quote }}
