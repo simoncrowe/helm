@@ -33,11 +33,15 @@ spec:
         resources:
           {{- toYaml .Values.resources | nindent 10 }}
         env:
-        - name: ASSESSOR_IMAGE
-          value: {{ .Values.runner.assessorImage }}
         - name: NOTIFIER_URL
           value: {{ .Values.runner.notifierUrl }}
+        - name: NODE_SELECTOR_KEY
+          value: {{ .Values.assessor.nodeSelectorKey }}
+        - name: NODE_SELECTOR_VALUE
+          value: {{ .Values.assessor.nodeSelectorValue }}
+        - name: ASSESSOR_IMAGE
+          value: {{ .Values.assessor.image }}
         - name: LLM_SYSTEM_PROMPT
-          value: {{ .Values.runner.llmSystemPrompt }}
+          value: {{ .Values.assessor.llmSystemPrompt }}
         - name: LLM_POSITIVE_RESPONSE_REGEX
-          value: {{ .Values.runner.llmPositiveResponseRegex }}
+          value: {{ .Values.assessor.llmPositiveResponseRegex }}
