@@ -12,10 +12,14 @@ image:
   tag: null 
 
 runner:
-  assessorImage: null
   notifierUrl: http://notifier.shortlist.svc.cluster.local/api/v1/notifcations
+
+assessor:
+  nodeSelectorKey: null
+  nodeSelectorValue: null
+  image: null
   llmSystemPrompt: ""
-  llpPositiveResponseRegex: ""
+  llmPositiveResponseRegex: ""
 
 imagePullSecrets: []
 nameOverride: ""
