@@ -93,6 +93,16 @@ entries:
     version: 0.1.0
   shortlist-rm-ingester:
   - apiVersion: v2
+    appVersion: 1.0.5
+    created: "2025-03-29T15:13:03.50775277Z"
+    description: Ingests listings
+    digest: 1202d89495c986bbf4b6d5c3da7a8b234e64c2bf28b7a452fca20465a1bfbfee
+    name: shortlist-rm-ingester
+    type: application
+    urls:
+    - https://github.com/simoncrowe/helm/releases/download/shortlist-rm-ingester-1.0.10/shortlist-rm-ingester-1.0.10.tgz
+    version: 1.0.10
+  - apiVersion: v2
     appVersion: 1.0.4
     created: "2025-03-15T17:28:21.220851739Z"
     description: Ingests listings
@@ -283,4 +293,4 @@ entries:
     urls:
     - https://github.com/simoncrowe/helm/releases/download/shortlist-runner-0.1.0/shortlist-runner-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-29T14:32:34.294155754Z"
+generated: "2025-03-29T15:13:03.507830284Z"
