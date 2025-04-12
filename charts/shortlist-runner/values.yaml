@@ -18,8 +18,7 @@ assessor:
   nodeSelectorKey: null
   nodeSelectorValue: null
   image: null
-  llmSystemPrompt: ""
-  llmPositiveResponseRegex: ""
+  config: {}
 
 imagePullSecrets: []
 nameOverride: ""

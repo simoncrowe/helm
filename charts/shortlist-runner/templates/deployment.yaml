@@ -35,13 +35,18 @@ spec:
         env:
         - name: NOTIFIER_URL
           value: {{ .Values.runner.notifierUrl }}
-        - name: NODE_SELECTOR_KEY
+        - name: ASSESSOR_NODE_SELECTOR_KEY
           value: {{ .Values.assessor.nodeSelectorKey }}
-        - name: NODE_SELECTOR_VALUE
+        - name: ASSESSOR_NODE_SELECTOR_VALUE
           value: {{ .Values.assessor.nodeSelectorValue }}
         - name: ASSESSOR_IMAGE
           value: {{ .Values.assessor.image }}
-        - name: LLM_SYSTEM_PROMPT
-          value: {{ .Values.assessor.llmSystemPrompt | quote }}
-        - name: LLM_POSITIVE_RESPONSE_REGEX
-          value: {{ .Values.assessor.llmPositiveResponseRegex | quote }}
+        - name: ASSESSOR_CONFIG_PATH
+          value: /etc/shortlist-assessor/config.json
+        volumeMounts:
+        - name: assessor-config
+          mountpath: /etc/shortlist-assessor 
+      volumes:
+      - name: assessor-config
+        configMap:
+          name: {{ include "shortlist-runner.fullname" . }}-assessor-config 
