@@ -214,6 +214,16 @@ entries:
     version: 0.1.0
   shortlist-runner:
   - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2025-04-12T13:14:24.972963137Z"
+    description: Runs k8s jobs based on ingested payloads
+    digest: 6192707cf50161f36fc61f435bfca3f092d8f16293ff8102fd074f99a640fe72
+    name: shortlist-runner
+    type: application
+    urls:
+    - https://github.com/simoncrowe/helm/releases/download/shortlist-runner-2.0.0/shortlist-runner-2.0.0.tgz
+    version: 2.0.0
+  - apiVersion: v2
     appVersion: 0.3.1
     created: "2025-03-29T16:02:09.274404465Z"
     description: Runs k8s jobs based on ingested payloads
@@ -303,4 +313,4 @@ entries:
     urls:
     - https://github.com/simoncrowe/helm/releases/download/shortlist-runner-0.1.0/shortlist-runner-0.1.0.tgz
     version: 0.1.0
-generated: "2025-03-29T16:02:09.274496567Z"
+generated: "2025-04-12T13:14:24.973036745Z"
