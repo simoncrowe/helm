@@ -5,8 +5,7 @@ metadata:
     {{- include "shortlist-runner.labels" . | nindent 4 }}
   namespace: {{ .Values.namespace }}
   name: {{ include "shortlist-runner.fullname" . }}-assessor-config
-spec:
-  data:
-    config.json: |-
-      {{ .Values.assessor.config | toJson | indent 4 }}
+data:
+  config.json: |-
+    {{ .Values.assessor.config | toJson | indent 4 }}
 
