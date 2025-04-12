@@ -45,7 +45,7 @@ spec:
           value: /etc/shortlist-assessor/config.json
         volumeMounts:
         - name: assessor-config
-          mountpath: /etc/shortlist-assessor 
+          mountPath: /etc/shortlist-assessor
       volumes:
       - name: assessor-config
         configMap:
