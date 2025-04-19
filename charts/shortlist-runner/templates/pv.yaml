@@ -5,9 +5,8 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  resources:
-    requests:
-      storage: 200Gi
+  capacity:
+    storage: 200Gi
   persistentVolumeReclaimPolicy: Retain
   gcePersistentDisk:
     pdName: {{ .Values.assessor.cachePersistentDiskName }}
