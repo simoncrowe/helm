@@ -35,7 +35,7 @@ spec:
         env:
         - name: NOTIFIER_URL
           value: {{ .Values.runner.notifierUrl }}
-        - name: ASSESSOR_CACHE_PVC_NAME
+        - name: ASSESSOR_CACHE_PV_NAME
           value: {{ include "shortlist-runner.fullname" . }}-assessor-cache 
         - name: ASSESSOR_NODE_SELECTOR_KEY
           value: {{ .Values.assessor.nodeSelectorKey }}

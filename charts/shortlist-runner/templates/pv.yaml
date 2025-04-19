@@ -8,4 +8,7 @@ spec:
   resources:
     requests:
       storage: 200Gi
-  storageClassName: standard-rwo
+  persistentVolumeReclaimPolicy: Retain
+  gcePersistentDisk:
+    pdName: {{ .Values.assessor.cachePersistentDiskName }}
+
