@@ -12,4 +12,3 @@ kind: ServiceAccount
 metadata:
   name: {{ include "shortlist-runner.fullname" . }}
   namespace: {{ .Values.namespace }}
-apiVersion: rbac.authorization.k8s.io/v1
