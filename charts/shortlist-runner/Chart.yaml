@@ -3,5 +3,5 @@ name: shortlist-runner
 description: Runs k8s jobs based on ingested payloads
 type: application
 
-version: 2.1.1
-appVersion: "1.0.8"
+version: 2.1.2
+appVersion: "1.0.9"
