@@ -41,10 +41,12 @@ spec:
           value: {{ .Values.assessor.nodeSelectorValue }}
         - name: ASSESSOR_IMAGE
           value: {{ .Values.assessor.image }}
+        - name: ASSESSOR_SERVICE_ACCOUNT
+          value: {{ include "shortlist-runner.fullname" . }}-assessor
         - name: ASSESSOR_CONFIG_PATH
           value: /etc/shortlist-assessor/config.json
         - name: ASSESSOR_CACHE_BUCKET_NAME
-          value: {{ .Values.assessor.cacheBucketName }} 
+          value: {{ .Values.assessor.cacheBucketName }}
         volumeMounts:
         - name: assessor-config
           mountPath: /etc/shortlist-assessor
