@@ -3,5 +3,5 @@ name: shortlist-rm-email-notifier
 description: Sends email notifications for shortlisted RM profiles
 type: application
 
-version: 0.2.5
-appVersion: "0.2.3"
+version: 0.2.6
+appVersion: "0.2.4"
